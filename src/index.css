@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Minecraft';
+	src: url('/fonts/Minecraft.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Dodaje płynne przewijanie */
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 100px; /* Przesunięcie o 100px w górę */
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-corner {
+	background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ae1dcf;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #000;
+}

@@ -1,0 +1,9 @@
+.trailer__box svg {
+	position: absolute;
+
+	height: auto;
+	width: auto;
+	transform: translateX(-150%) rotate(70deg);
+	z-index: 0;
+	filter: drop-shadow(5px 5px 0px rgba(0, 0, 0, 0.356));
+}
