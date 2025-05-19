@@ -1,4 +1,5 @@
 import ShopComponent from './ShopComponent';
+import config from '../config/config.json';
 
 const Shop = () => {
 	return (
@@ -14,9 +15,9 @@ const Shop = () => {
 			<div className='flex flex-col max-w-6xl mx-auto justify-center items-center pt-20 text-white'>
 				<h2 className=' text-center text-6xl z-10 pb-10'>Most frequently purchased items</h2>
 				<div className='flex flex-wrap gap-4 justify-center'>
-					<ShopComponent img={'/skin1.png'} title={'VIP rank'} price={'15.00'} />
-					<ShopComponent img={'/case.png'} title={'64x Premiumcase'} price={'30.00'} />
-					<ShopComponent img={'/talisman.png'} title={'Talisman of Death'} price={'5.00'} />
+					{config.shop.items.map(({ img, title, price }) => (
+						<ShopComponent key={title} img={img} title={title} price={price} />
+					))}
 				</div>
 			</div>
 		</div>

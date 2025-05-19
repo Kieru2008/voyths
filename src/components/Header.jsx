@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import config from '../config/config.json';
 
 const Header = () => {
 	const [playerCount, setPlayerCount] = useState(0);
@@ -7,7 +8,7 @@ const Header = () => {
 
 	useEffect(() => {
 		const fetchPlayerCount = () => {
-			const apiUrl = 'https://mcapi.us/server/status?ip=rgmc.pl';
+			const apiUrl = 'https://mcapi.us/server/status?ip=' + config.hero.ip;
 
 			fetch(apiUrl)
 				.then(response => {
@@ -29,13 +30,8 @@ const Header = () => {
 				});
 		};
 
-		// Fetch initially
 		fetchPlayerCount();
-
-		// Fetch every 10 seconds
 		const intervalId = setInterval(fetchPlayerCount, 10000);
-
-		// Cleanup interval on component unmount
 		return () => clearInterval(intervalId);
 	}, []);
 
@@ -44,7 +40,7 @@ const Header = () => {
 	}
 
 	if (loading) {
-		return <div>Loading...</div>; // Prosta dywiza z komunikatem ładowania
+		return <div>Loading...</div>; 
 	}
 
 	return (

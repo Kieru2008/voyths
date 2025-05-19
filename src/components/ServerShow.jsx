@@ -1,4 +1,5 @@
 import './css/Trailer.css';
+import config from '../config/config.json';
 
 const ServerShow = () => {
 	return (
@@ -9,7 +10,7 @@ const ServerShow = () => {
 				<div className='relative w-full p-10 max-w-3xl'>
 					<iframe
 						className='w-full h-[200px] sm:h-[300px] lg:h-[400px] border-4 border-black rounded-lg'
-						src='https://www.youtube.com/embed/YqDcxhqRaYE'
+						src={config.video.link}
 						title='That one Minecraft Edit'
 						frameBorder='0'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

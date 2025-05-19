@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { HomeIcon, ShopIcon, InfoIcon } from '../config/config';
+import { HomeIcon, ShopIcon, InfoIcon } from '../config/icons';
+import config from '../config/config.json';
 import NavElement from './NavElement';
 
 const Navbar = () => {
@@ -21,16 +22,27 @@ const Navbar = () => {
 			}
 		};
 		window.addEventListener('scroll', handleScroll);
-		handleScroll(); // Call on mount to set the initial state
+		handleScroll();
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
+
+	const iconMap = {
+		ShopIcon: <ShopIcon width={80} height={80} />,
+		HomeIcon: <HomeIcon width={80} height={80} />,
+		InfoIcon: <InfoIcon width={80} height={80} />,
+	};
+
+	const phoneIconMap = {
+		ShopIcon: <ShopIcon width={60} height={60} />,
+		HomeIcon: <HomeIcon width={60} height={60} />,
+		InfoIcon: <InfoIcon width={60} height={60} />,
+	};
 
 	const toggleMenu = () => setMenuOpen(!menuOpen);
 
 	return (
 		<nav className='fixed top-0 w-full z-50 bg-black'>
 			<div className='relative max-w-4xl mx-auto flex justify-between items-center p-4'>
-				{/* Ikona hamburgera */}
 				<button className='lg:hidden text-white p-2' onClick={toggleMenu}>
 					<svg
 						className='w-8 h-8'
@@ -43,24 +55,15 @@ const Navbar = () => {
 				</button>
 
 				<div className='hidden lg:flex justify-between items-center w-full'>
-					<NavElement
-						icon={<ShopIcon width={80} height={80} />}
-						content={'Shop'}
-						scrollToId={'#shop'}
-						active={activeSection === '#shop'}
-					/>
-					<NavElement
-						icon={<HomeIcon width={80} height={80} />}
-						content={'Home'}
-						scrollToId={'#home'}
-						active={activeSection === '/'}
-					/>
-					<NavElement
-						icon={<InfoIcon width={80} height={80} />}
-						content={'Info'}
-						scrollToId={'#info'}
-						active={activeSection === '#info'}
-					/>
+					{config.navbar.links.map(item => (
+						<NavElement
+							key={item.content}
+							icon={iconMap[item.icon]}
+							content={item.content}
+							scrollToId={item.scrollToId}
+							active={activeSection === item.activeMatch}
+						/>
+					))}
 				</div>
 
 				<div
@@ -68,25 +71,16 @@ const Navbar = () => {
 						menuOpen ? 'block' : 'hidden'
 					}`}>
 					<div className='flex flex-col items-center justify-center h-full'>
-						<NavElement
-							icon={<ShopIcon width={60} height={60} />}
-							content={'Shop'}
-							closeMenu={toggleMenu}
-							scrollToId={'#shop'}
-						/>
-						<NavElement
-							icon={<HomeIcon width={60} height={60} />}
-							content={'Home'}
-							closeMenu={toggleMenu}
-							scrollToId={'#home'}
-							main={true}
-						/>
-						<NavElement
-							icon={<InfoIcon width={60} height={60} />}
-							content={'Info'}
-							closeMenu={toggleMenu}
-							scrollToId={'#info'}
-						/>
+						{config.navbar.links.map(item => (
+							<NavElement
+								key={item.content}
+								icon={phoneIconMap[item.icon]}
+								content={item.content}
+								scrollToId={item.scrollToId}
+								active={activeSection === item.activeMatch}
+								closeMenu={() => setMenuOpen(false)}
+							/>
+						))}
 					</div>
 					<button className='absolute top-4 right-4 text-white text-3xl' onClick={toggleMenu}>
 						<svg fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>

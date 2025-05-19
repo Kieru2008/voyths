@@ -1,0 +1,64 @@
+{
+	"navbar": {
+		"links": [
+			{
+				"icon": "ShopIcon",
+				"content": "Shop",
+				"scrollToId": "#shop",
+				"activeMatch": "#shop"
+			},
+			{
+				"icon": "HomeIcon",
+				"content": "Home",
+				"scrollToId": "#home",
+				"activeMatch": "/"
+			},
+			{
+				"icon": "InfoIcon",
+				"content": "Info",
+				"scrollToId": "#info",
+				"activeMatch": "#info"
+			}
+		]
+	},
+	"hero": {
+		"ip": "blokowo.pl"
+	},
+	"shop": {
+		"items": [
+			{
+				"img": "/skin1.png",
+				"title": "VIP rank",
+				"price": "15.00"
+			},
+			{
+				"img": "/case.png",
+				"title": "64x Premiumcase",
+				"price": "30.00"
+			},
+			{
+				"img": "/talisman.png",
+				"title": "Talisman of Death",
+				"price": "5.00"
+			}
+		]
+	},
+	"video": {
+		"link": "https://www.youtube.com/embed/YqDcxhqRaYE"
+	},
+	"footer": {
+		"logo": "/logo2.png",
+		"brandName": "AmazingDev.PL",
+		"usefulLinks": [
+			{ "label": "Home", "href": "" },
+			{ "label": "Terms of Service", "href": "" },
+			{ "label": "Privacy Policy", "href": "" },
+			{ "label": "FAQ", "href": "" }
+		],
+		"disclaimer": {
+			"pl": "Serwer amazingdev.pl nie jest w żaden sposób powiązany z firmą Mojang lub Microsoft.",
+			"en": "amazingdev.pl server is not associated with Mojang or Microsoft in any way."
+		},
+		"credits": "Created by Amazing"
+	}
+}
