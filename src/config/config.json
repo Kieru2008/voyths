@@ -28,8 +28,8 @@
 		"items": [
 			{
 				"img": "/skin1.png",
-				"title": "VIP rank",
-				"price": "15.00"
+				"title": "Rank",
+				"price": "10K - 80K"
 			},
 			{
 				"img": "/case.png",
@@ -48,7 +48,7 @@
 	},
 	"footer": {
 		"logo": "/logo2.png",
-		"brandName": "AmazingDev.PL",
+		"brandName": "VoythSMP",
 		"usefulLinks": [
 			{ "label": "Home", "href": "" },
 			{ "label": "Terms of Service", "href": "" },
@@ -56,9 +56,9 @@
 			{ "label": "FAQ", "href": "" }
 		],
 		"disclaimer": {
-			"pl": "Serwer amazingdev.pl nie jest w żaden sposób powiązany z firmą Mojang lub Microsoft.",
-			"en": "amazingdev.pl server is not associated with Mojang or Microsoft in any way."
+			"pl": "Server VoythSMP tidak terkait dengan Mojang atauServer VoythSMP tidak berafiliasi dengan Mojang atau dengan cara apa pun",
+			"en": "VoythSMP server is not associated with Mojang or Microsoft in any way."
 		},
-		"credits": "Created by Amazing"
+		"credits": "Created by JustKieru"
 	}
 }
