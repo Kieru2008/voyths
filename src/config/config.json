@@ -56,7 +56,7 @@
 			{ "label": "FAQ", "href": "" }
 		],
 		"disclaimer": {
-			"pl": "Server VoythSMP tidak terkait dengan Mojang atauServer VoythSMP tidak berafiliasi dengan Mojang atau dengan cara apa pun",
+			"id": "Server VoythSMP tidak terkait dengan Mojang atauServer VoythSMP tidak berafiliasi dengan Mojang atau dengan cara apa pun",
 			"en": "VoythSMP server is not associated with Mojang or Microsoft in any way."
 		},
 		"credits": "Created by JustKieru"
